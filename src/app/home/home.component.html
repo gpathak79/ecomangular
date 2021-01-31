@@ -1,0 +1,37 @@
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">A Warm Welcome!</h1>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+      <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+    </header>
+
+    <!-- Page Features -->
+    <div class="row text-center">
+      <div class="col-lg-3 col-md-6 mb-4" *ngFor="let data of ProductData">
+        <div class="card h-100" >
+          <img class="card-img-top" src={{data.item_image}} alt="">
+          <div class="card-body">
+            <h4 class="card-title">{{data.item_name}}</h4>
+            <p class="card-text">{{data.item_details}}</p>
+            <h2>${{data.item_price}}</h2>
+          </div>
+          <div class="card-footer">
+            <!-- <a class="btn btn-primary"  [routerLink]="['/product-details',data.sku]" routerLinkActive="active">Find Out More!</a> -->
+          
+             <a class="btn btn-primary"  [routerLink]="['/product-details']"    [queryParams]="{property:data.sku}"routerLinkActive="active">Find Out More!</a>
+          </div>
+        </div>
+     
+      </div>
+
+     
+    </div>
+ 
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
